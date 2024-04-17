@@ -9,6 +9,8 @@ int main() {
         Engine engine{settings};
 
         std::shared_ptr<Entity> hero = engine.create_hero();
+        // Customize character
+        Heroes::make_wizard(hero);
 
         engine.run();
     }

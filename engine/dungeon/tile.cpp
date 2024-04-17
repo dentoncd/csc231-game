@@ -1,4 +1,6 @@
 #include "tile.h"
+#include "vec.h"
+#include "dungeon.h"
 
 Tile::Tile()
     :type{Type::None}, sprite{}, visible{false}, walkable{false}, door{nullptr}, entity{nullptr} {}
@@ -22,4 +24,5 @@ bool Tile::has_entity() const {
 bool Tile::is_visible() const {
     return visible;
 }
+
 

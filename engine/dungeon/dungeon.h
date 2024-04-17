@@ -12,7 +12,6 @@
 #include <unordered_map>
 #include <set>
 
-
 class Dungeon {
 public:
     Dungeon() = default;
@@ -47,6 +46,11 @@ public:
     // Individual tiles can be access using integers x and y: Tile& tile = tiles(x, y)
     // OR
     // Vec position{x, y}; Tile& tile = tiles(position)
+
+    // Page 19 of Actions
+//    Vec position{1, 2};
+//    Tile& tile = engine.dungeon.get_tile(position);
+
     Grid<Tile> tiles;
 
     // Other elements of the dungeon
