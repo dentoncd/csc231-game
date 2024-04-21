@@ -3,11 +3,11 @@
 #include "tile.h"
 #include "engine.h"
 #include "action.h"
-//#include "opendoor.h"
+#include "opendoor.h"
 
-Move::Move(Vec direction) : direction(direction) {
+Move::Move(Vec direction)
+    : direction{direction} {}
 
-}
 Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     Vec position = entity->get_position() + direction;
     entity->change_direction(direction);
@@ -17,10 +17,9 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
         return failure();
     }
 
-    if (tile.has_door()) {
-       // return alternative(OpenDoor{*tile.door})
+    if (tile.has_door() && !tile.door->is_open()) {
+        return alternative(OpenDoor{*tile.door});
     }
-
 
     entity->move_to(position);
     return success();

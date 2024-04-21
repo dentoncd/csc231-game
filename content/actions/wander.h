@@ -1,13 +1,10 @@
 #pragma once
-
 #include "action.h"
 #include "engine.h"
-#include "door.h"
+#include "entity.h"
 
-class OpenDoor : public Action {
+class Wander : public Action {
 public:
-    OpenDoor(Door& door);
     Result perform(Engine& engine, std::shared_ptr<Entity> entity) override;
 private:
-    Door& door;
 };

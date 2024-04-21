@@ -5,11 +5,15 @@
 #include "move.h"
 #include "rest.h"
 #include "closedoor.h"
+#include "opendoor.h"
+#include "sword.h"
+#include <ctime>
 
 namespace Heroes {
 void make_wizard(std::shared_ptr<Entity>& hero) {
     hero->set_sprite("wizard");
     hero->set_max_health(10);
+    hero->add_to_inventory(std::make_shared<Sword>(2, 5));
     hero->behavior = behavior;
 }
 
@@ -21,6 +25,7 @@ std::unique_ptr<Action> behavior(Engine& engine, Entity& ) {
     else if (key == "C") {
         return std::make_unique<CloseDoor>();
     }
+
     else if (key == "Up" || key == "W") {
         return std::make_unique<Move>(Vec{0, 1});
     }
