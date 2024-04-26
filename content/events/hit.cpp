@@ -2,9 +2,8 @@
 #include "entity.h"
 #include "die.h"
 
-Hit::Hit(Entity& entity, int min_damage, int max_damage)
-    : entity{entity} {}
-
+Hit::Hit(Entity& entity, int damage)
+    : entity{entity}, damage{damage} {}
 void Hit::execute(Engine&) {
     entity.take_damage(damage);
 }

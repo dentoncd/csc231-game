@@ -12,9 +12,14 @@ int main() {
         // Customize character
         Heroes::make_wizard(hero);
 
-        for (int i = 0; i < 20; ++i) {
-            std::shared_ptr<Entity> monster = engine.create_monster();
-            Monsters::make_orc_masked(monster);
+        for (int i = 0; i < 10; ++i) {
+            std::shared_ptr<Entity> monster1 = engine.create_monster();
+            std::shared_ptr<Entity> monster2 = engine.create_monster();
+            std::shared_ptr<Entity> monster3 = engine.create_monster();
+
+            Monsters::make_orc_masked(monster1);
+            Monsters::make_ogre(monster2);
+            Monsters::make_goblin(monster3);
         }
 
         engine.run();

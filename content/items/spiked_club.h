@@ -1,10 +1,9 @@
 #pragma once
-
 #include "item.h"
 
-class Sword : public Item {
+class Spiked_Club : public Item {
 public:
-    explicit Sword(int damage);
+    explicit Spiked_Club(int damage);
     void use(Engine& engine, Entity& attacker, Entity& defender) override;
 
 private:

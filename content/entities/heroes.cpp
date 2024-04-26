@@ -5,19 +5,21 @@
 #include "move.h"
 #include "rest.h"
 #include "closedoor.h"
-#include "opendoor.h"
 #include "sword.h"
+#include "item.h"
+#include "spear.h"
 #include <ctime>
 
 namespace Heroes {
 void make_wizard(std::shared_ptr<Entity>& hero) {
     hero->set_sprite("wizard");
     hero->set_max_health(10);
-    hero->add_to_inventory(std::make_shared<Sword>(2, 5));
+    hero->add_to_inventory(std::make_shared<Sword>(3));
+    hero->add_to_inventory(std::make_shared<Spear>(5));
     hero->behavior = behavior;
 }
 
-std::unique_ptr<Action> behavior(Engine& engine, Entity& ) {
+std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
     std::string key = engine.input.get_last_keypress();
     if (key == "R") {
         return std::make_unique<Rest>();
@@ -37,6 +39,11 @@ std::unique_ptr<Action> behavior(Engine& engine, Entity& ) {
     }
     else if (key == "Right") {
         return std::make_unique<Move>(Vec{1, 0});
+    }
+
+    else if (!key.empty() && std::isdigit(key.at(0))){
+        int item_num = std::stoi(key) - 1; // "1" -> index 0
+        entity.select_item(item_num);
     }
 
     return nullptr;
