@@ -13,7 +13,7 @@
 namespace Heroes {
 void make_wizard(std::shared_ptr<Entity>& hero) {
     hero->set_sprite("wizard");
-    hero->set_max_health(10);
+    hero->set_max_health(100);
     hero->add_to_inventory(std::make_shared<Sword>(3));
     hero->add_to_inventory(std::make_shared<Spear>(5));
     hero->behavior = behavior;

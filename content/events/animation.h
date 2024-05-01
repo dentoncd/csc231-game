@@ -5,11 +5,12 @@
 #include "animatedsprite.h"
 
 
-class Fire : public Event {
+class Animation : public Event {
 public:
-    Fire(Vec position);
+    explicit Animation(std::string name, Vec position);
     void execute(Engine& engine) override;
 private:
+    std::string name;
     Vec position;
     AnimatedSprite sprite;
 };

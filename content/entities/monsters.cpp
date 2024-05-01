@@ -8,17 +8,22 @@
 #include "wander.h"
 #include "spiked_club.h"
 #include "move.h"
+#include "bite.h"
 
 namespace Monsters {
 void make_orc_masked(std::shared_ptr<Entity>& monster) {
     monster->set_sprite("orc_masked");
     monster->set_max_health(10);
+    // Monster bites you
+    monster->add_to_inventory(std::make_shared<Bite>(2));
     monster->behavior = behavior;
 }
 
 void make_goblin(std::shared_ptr<Entity>& monster) {
     monster -> set_sprite("goblin");
     monster->set_max_health(5);
+
+    monster->add_to_inventory(std::make_shared<Bite>(1));
     monster->behavior = behavior;
 }
 
