@@ -3,7 +3,7 @@
 
 class Potion_Red : public Item {
 public:
-    Potion_Red(int healing_amount);
+    explicit Potion_Red(int healing_amount);
 
     // add health to owner
     void use(Engine& engine, Entity& owner) override;

@@ -1,5 +1,5 @@
 #include "entity.h"
-
+#include <algorithm>
 #include <sstream>
 
 #include "action.h"
