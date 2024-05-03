@@ -37,6 +37,9 @@ public:
     void set_team(Team new_team);
     [[nodiscard]] Team get_team() const;
 
+    // healing
+    void heal_health(int amount);
+
     // managing items within the inventory
     [[nodiscard]] bool is_inventory_full() const;
     void add_to_inventory(std::shared_ptr<Item> item);

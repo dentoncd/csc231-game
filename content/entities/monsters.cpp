@@ -29,9 +29,9 @@ void make_goblin(std::shared_ptr<Entity>& monster) {
 
 void make_ogre(std::shared_ptr<Entity>& monster) {
     monster -> set_sprite("ogre");
-    monster->set_max_health(15);
+    monster->set_max_health(20);
     monster->behavior = behavior;
-    monster->add_to_inventory(std::make_shared<Spiked_Club>(5));
+    monster->add_to_inventory(std::make_shared<Spiked_Club>(6));
 }
 
 

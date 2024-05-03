@@ -66,6 +66,11 @@ void Entity::take_damage(int amount) {
     }
 }
 
+void Entity::heal_health(int amount) {
+    health += amount;
+    health = std::clamp(health, 0, max_health);
+}
+
 void Entity::set_max_health(int value) {
     max_health = health = value;
     alive = health > 0;

@@ -3,6 +3,7 @@
 #include "engine.h"
 #include "swing.h"
 #include "entity.h"
+#include "heal.h"
 
 
 Spear::Spear(int damage)
