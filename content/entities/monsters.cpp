@@ -1,14 +1,15 @@
 #include "monsters.h"
 
 #include "action.h"
+#include "bite.h"
 #include "engine.h"
 #include "entity.h"
-#include "rest.h"
-#include "randomness.h"
-#include "wander.h"
-#include "spiked_club.h"
 #include "move.h"
-#include "bite.h"
+#include "randomness.h"
+#include "rest.h"
+#include "spear.h"
+#include "spiked_club.h"
+#include "wander.h"
 
 namespace Monsters {
 void make_orc_masked(std::shared_ptr<Entity>& monster) {
@@ -31,7 +32,7 @@ void make_ogre(std::shared_ptr<Entity>& monster) {
     monster -> set_sprite("ogre");
     monster->set_max_health(20);
     monster->behavior = behavior;
-    monster->add_to_inventory(std::make_shared<Spiked_Club>(6));
+    monster->add_to_inventory(std::make_shared<Spear>(3));
 }
 
 

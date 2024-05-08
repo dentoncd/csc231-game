@@ -4,6 +4,7 @@ add_library(items
         spear.cpp
         spiked_club.cpp
         potion_red.cpp
+        fire_staff.cpp
 )
 
 target_include_directories(items PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
