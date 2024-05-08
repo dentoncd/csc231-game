@@ -19,8 +19,8 @@ void make_wizard(std::shared_ptr<Entity>& hero) {
     hero->set_max_health(100);
     hero->add_to_inventory(std::make_shared<Sword>(5));
     hero->add_to_inventory(std::make_shared<Spear>(3));
-    hero->add_to_inventory(std::make_shared<Potion_Red>(5));
-    hero->add_to_inventory(std::make_shared<Fire_Staff>(2));
+    hero->add_to_inventory(std::make_shared<Potion_Red>(10));
+    hero->add_to_inventory(std::make_shared<Fire_Staff>(5));
     hero->behavior = behavior;
 }
 
